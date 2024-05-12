@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const puppeteer = require('puppeteer');
 const { createClient } = require('pexels');
@@ -6,7 +7,7 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-const client = createClient('D4NJWR3jmDAy0LS3KQm2Q19KzhDJQ7htiTSGHyyOU1ZJn8ywjrKXiD4T');
+const client = createClient(process.env.PEXELS_API_KEY);
 
 async function getRandomImageUrl() {
     try {
